@@ -1,5 +1,5 @@
 # ===============================================================
-# Unconditional Flow-Matching Model for TRP-Cage ψ–φ Data
+# Unconditional Flow-Matching Model for TRP-Cage psi phi Data
 # Model 1: Without residual connection
 # Model 2:  With residual connections
 # Model 3: With Transformer
@@ -45,7 +45,7 @@ os.makedirs(SAVE_DIR, exist_ok=True)
 os.makedirs(SAMPLE_DIR, exist_ok=True)
 
 # ===============================================================
-# Time Embedding (Flow Matching style)
+# Time Embedding
 # ===============================================================
 
 class TimeEmbedding(nn.Module):
@@ -67,12 +67,12 @@ class TimeEmbedding(nn.Module):
 
 
 # ===============================================================
-# Unconditional UNet-MLP for Flow Matching
+# Unconditional MLP for Flow Matching
 # ===============================================================
 
 
 
-class UNetFM(nn.Module):
+class MLPFM(nn.Module):
     def __init__(self, data_dim=38, hidden_dim=256, dropout=0.2):
         super().__init__()
         self.time_embed = TimeEmbedding(hidden_dim)
@@ -143,9 +143,9 @@ class ResBlock(nn.Module):
 
 
 # ===============================================================
-# UNet-MLP with Residuals for Flow Matching
+# MLP with Residuals for Flow Matching
 # ===============================================================
-class UNetFM_RS(nn.Module):
+class MLPFM_RS(nn.Module):
     def __init__(self, data_dim=38, hidden_dim=256, dropout=0.2):
         super().__init__()
         self.time_embed = TimeEmbedding(hidden_dim)
@@ -322,8 +322,8 @@ print("Loaded data:", data.shape, flush=True)
 # ===============================================================
 # Model, Optimizer
 # ===============================================================
-# model = UNetFM(data_dim=DATA_DIM, hidden_dim=HIDDEN_DIM).to(device)
-# model = UNetFM_RS(data_dim=DATA_DIM, hidden_dim=HIDDEN_DIM).to(device)
+# model = MLPFM(data_dim=DATA_DIM, hidden_dim=HIDDEN_DIM).to(device)
+# model = MLPFM_RS(data_dim=DATA_DIM, hidden_dim=HIDDEN_DIM).to(device)
 
 model = TransformerFM(
     data_dim=DATA_DIM,
@@ -409,7 +409,7 @@ print(f"Total time: {total_time/60:.2f} minutes ({total_time:.1f} seconds)", flu
 # ===============================================================
 """
 
-model = UNetFM(data_dim=38).to(device)
+model = MLPFM(data_dim=38).to(device)
 model.load_state_dict(torch.load("models_fm/unet_fm_epoch_5000.pt", map_location=device))
 model.eval()
 
