@@ -1,5 +1,5 @@
 # ===============================================================
-# Diffusion Models for TRP-Cage ψ–φ (38D)
+# Diffusion Models for TRP-Cage psi - phi data(38D)
 # Model 1 : MLP (no residuals)
 # Model 2 : MLP + Residuals
 # Model 3 : Transformer
