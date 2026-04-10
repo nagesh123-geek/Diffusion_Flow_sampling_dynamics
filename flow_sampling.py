@@ -58,7 +58,7 @@ class TimeEmbedding(nn.Module):
 # ===============================================================
 # UNetFM
 # ===============================================================
-class UNetFM(nn.Module):
+class MLPFM(nn.Module):
     def __init__(self, data_dim=38, hidden_dim=256, dropout=0.2):
         super().__init__()
         self.time_embed = TimeEmbedding(hidden_dim)
@@ -121,7 +121,7 @@ class ResBlock(nn.Module):
 # ===============================================================
 # UNetFM_RS
 # ===============================================================
-class UNetFM_RS(nn.Module):
+class MLPFM_RS(nn.Module):
     def __init__(self, data_dim=38, hidden_dim=256, dropout=0.2):
         super().__init__()
         self.time_embed = TimeEmbedding(hidden_dim)
@@ -237,8 +237,8 @@ def sample_flow_batched(model, total_samples, batch_size=4096, t_eval=1000):
 # ===============================================================
 # Choose model
 # ===============================================================
-#model = UNetFM(DATA_DIM, HIDDEN_DIM, DROPOUT).to(device)
-#model = UNetFM_RS(DATA_DIM, HIDDEN_DIM, DROPOUT).to(device)
+#model = MLPFM(DATA_DIM, HIDDEN_DIM, DROPOUT).to(device)
+#model = MLPFM_RS(DATA_DIM, HIDDEN_DIM, DROPOUT).to(device)
 model = TransformerFM(DATA_DIM, HIDDEN_DIM).to(device)
 
 # ===============================================================
