@@ -1,6 +1,6 @@
 # ===============================================================
 # Flow-Matching Sampling 
-# Supports:
+# Models :
 #   1) MLP
 #   2) MLP_RS (Residual)
 #   3) TransformerFM
@@ -32,7 +32,7 @@ T_EVAL      = 1000    # ODE steps
 
 #MODEL_PATH = "models_fm/unet_fm_epoch_50000.pt"
 #MODEL_PATH = "with_rs/models_fm_rs/unet_fm_epoch_50000.pt"
-MODEL_PATH = "with_trans/models_fm_trans/unet_fm_epoch_50000.pt"
+MODEL_PATH = "with_trans/models_fm_trans/unet_fm_epoch_50000.pt" # Load model
 
 SAVE_FILE  = "final_samples_trans.npy"
 
