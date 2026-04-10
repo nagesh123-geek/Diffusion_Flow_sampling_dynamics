@@ -11,7 +11,7 @@ device = "cuda:6" if torch.cuda.is_available() else "cpu"
 print("Using device:", device,flush=True)
 
 # ===============================================================
-# Hyperparameters (must match training)
+# Hyperparameters 
 # ===============================================================
 DATA_DIM   = 38
 HIDDEN_DIM = 256
@@ -21,7 +21,7 @@ T          = 1000
 N_SAMPLES = 500000
 BATCH     = 4096
 
-MODEL_TYPE = "transformer"   # "mlp", "mlp_rs", "transformer"
+MODEL_TYPE = "transformer"   # "mlp", "mlp_rs", "transformer" # Choose model here
 
 MODEL_PATH = {
     "mlp":         "unet/models/model_epoch_50000.pt",
@@ -233,7 +233,7 @@ np.save(SAVE_FILE, all_samples)
 print("Saved:", SAVE_FILE,flush=True)
 
 # ===============================================================
-# Save diffusion frames (1000 files)
+# Save diffusion frames (1000)
 # ===============================================================
 print("Saving diffusion frames...",flush=True)
 
@@ -244,7 +244,7 @@ for t in range(T):
 print(f"Saved {T} frames to {FRAME_DIR}/",flush=True)
 
 # ===============================================================
-# Quick visualization
+#  visualization
 # ===============================================================
 plt.figure(figsize=(6, 6))
 plt.scatter(all_samples[:5000, 0], all_samples[:5000, 1], s=2, alpha=0.5)
