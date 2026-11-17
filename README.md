@@ -20,7 +20,7 @@ The work associated with this repository has been published in the *Journal of C
 
 **Title:** Convergence Mechanisms of Generative Models in Molecular Conformational Sampling
 
-**Authors:** Nagesh B. E.* and Jagannath Mondal*
+**Authors:** Nagesh B. E. and Jagannath Mondal
 
 **Journal:** Journal of Chemical Theory and Computation
 
