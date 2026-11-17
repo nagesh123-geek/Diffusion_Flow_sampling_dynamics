@@ -72,6 +72,21 @@ The diffusion model implementation consists of training and sampling scripts.
 ### Training
 
 **`Diffusion_trpcage_training.py`**
+### Diffusion Model Training Configuration
+
+The diffusion models are trained using the following hyperparameters:
+
+| Hyperparameter | Value |
+|---|---:|
+| Batch size | 4096 |
+| Data dimension | 38 |
+| Hidden dimension | 256 |
+| Training epochs | 50,000 |
+| Learning rate | 5 × 10⁻⁵ |
+| Dropout | 0.2 |
+| Diffusion timesteps (T) | 1000 |
+
+These settings are used for training the MLP, Residual MLP, and Transformer architectures.
 
 Implements diffusion model training using three neural network architectures:
 
