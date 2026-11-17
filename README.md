@@ -111,6 +111,21 @@ The repository also implements Rectified Flow models for molecular conformationa
 ### Training
 
 **`flow_trpcage_train.py`**
+### Flow Model Training Configuration
+
+The flow models are trained using the following hyperparameters:
+
+| Hyperparameter | Value |
+|---|---:|
+| Batch size | 4096 |
+| Data dimension | 38 |
+| Hidden dimension | 256 |
+| Training epochs | 50,000 |
+| Learning rate | 5 × 10⁻⁵ |
+| Dropout | 0.2 |
+
+
+These settings are used for training the MLP, Residual MLP, and Transformer architectures.
 
 Implements Rectified Flow training using three neural network architectures:
 
