@@ -193,16 +193,23 @@ The primary research questions concern:
 If you use this code or build upon this research, please cite the following publication:
 
 ```bibtex
-@article{nagesh2026convergence,
-  title={Convergence Mechanisms of Generative Models in Molecular Conformational Sampling},
-  author={Nagesh, B. E. and Mondal, Jagannath},
-  journal={Journal of Chemical Theory and Computation},
-  volume={22},
-  number={18},
-  pages={9343--9359},
-  year={2026},
-  doi={10.1021/acs.jctc.6c01009}
+@article{10.1021/acs.jctc.6c01009,
+    author = {B E, Nagesh and Mondal, Jagannath},
+    title = {Convergence Mechanisms
+of Generative Models in Molecular
+Conformational Sampling},
+    journal = {Journal of Chemical Theory and Computation},
+    volume = {22},
+    number = {18},
+    pages = {9343-9359},
+    year = {2026},
+    month = {09},
+    issn = {1549-9618},
+    doi = {10.1021/acs.jctc.6c01009},
+    url = {https://doi.org/10.1021/acs.jctc.6c01009},
+    eprint = {https://pubs.acs.org/jctcce/article-pdf/22/18/9343/68401504/acs.jctc.6c01009.pdf},
 }
+
 ```
 
 ---
